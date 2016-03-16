@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
+var login = require('./login');
+var signup = require('./signup');
+
+// Log IN
+router.post('/login', login);
+// Sign UP
+router.post('/signup', signup);
+
 
 module.exports = router;
